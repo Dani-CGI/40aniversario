@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>40 Aniversario Bachillerato Tomas Cabrera</title>
+  <meta name="author" content="Bachillerato Artístico N.º 5093 Tomás Cabrera" />
+  <meta name="description"
+    content="Libro digital conmemorativo del 40° aniversario del Bachillerato Artístico N.º 5093 Tomás Cabrera, una institución dedicada a la formación en artes visuales, teatro y medios." />
+  <meta name="keywords"
+    content="Tomas Cabrera, Bachillerato Artístico, Escuela de Bellas Artes, Salta, arte, teatro, medios, aniversario, libro digital" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="40 Aniversario - Bachillerato Tomás Cabrera" />
+  <meta property="og:description"
+    content="Explorá el libro digital conmemorativo del 40° aniversario del Bachillerato Artístico N.º 5093 Tomás Cabrera." />
+  <meta property="og:image"
+    content="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqawcnvFKjULxbu9hyj-U3NhAje31tX8poGDpHGWzgjOeH_HvoN3DBdIIiIOai9XHKjD7JClB_oKpMAYXXdt9zwr5cU-Zps37rf3PqX-WJnJ8wjrP-XzNFeBhwnf3n4VChGhadK=s680-w680-h510-rw" />
+  <meta property="og:url" content="https://www.instagram.com/ies6002_tomas_cabrera/?hl=es" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="40 Aniversario - Bachillerato Tomás Cabrera" />
+  <meta name="twitter:description"
+    content="Libro digital conmemorativo del Bachillerato Artístico N.º 5093 Tomás Cabrera." />
+  <meta name="twitter:image"
+    content="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqawcnvFKjULxbu9hyj-U3NhAje31tX8poGDpHGWzgjOeH_HvoN3DBdIIiIOai9XHKjD7JClB_oKpMAYXXdt9zwr5cU-Zps37rf3PqX-WJnJ8wjrP-XzNFeBhwnf3n4VChGhadK=s680-w680-h510-rw" />
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="flipbook">
+    <div class="hard"><img src="images/01.jpg" alt="página 1"></div>
+    <div class="hard"><img src="images/02.jpg" alt="página 2"></div>
+    <div><img src="images/03.jpg" alt="página 3"></div>
+    <div><img src="images/04.jpg" alt="página 4"></div>
+    <div><img src="images/05.jpg" alt="página 5"></div>
+    <div><img src="images/06.jpg" alt="página 6"></div>
+    <div><img src="images/07.jpg" alt="página 7"></div>
+    <div><img src="images/08.jpg" alt="página 8"></div>
+    <div><img src="images/09.jpg" alt="página 9"></div>
+    <div><img src="images/10.jpg" alt="página 10"></div>
+    <div><img src="images/11.jpg" alt="página 11"></div>
+    <div><img src="images/12.jpg" alt="página 12"></div>
+    <div><img src="images/13.jpg" alt="página 13"></div>
+    <div><img src="images/14.jpg" alt="página 14"></div>
+    <div><img src="images/15.jpg" alt="página 15"></div>
+    <div><img src="images/16.jpg" alt="página 16"></div>
+    <div><img src="images/17.jpg" alt="página 17"></div>
+    <div><img src="images/18.jpg" alt="página 18"></div>
+    <div><img src="images/19.jpg" alt="página 19"></div>
+    <div><img src="images/20.jpg" alt="página 20"></div>
+    <div><img src="images/21.jpg" alt="página 21"></div>
+    <div><img src="images/22.jpg" alt="página 22"></div>
+    <div><img src="images/23.jpg" alt="página 23"></div>
+    <div><img src="images/24.jpg" alt="página 24"></div>
+    <div><img src="images/25.jpg" alt="página 25"></div>
+    <div><img src="images/26.jpg" alt="página 26"></div>
+    <div><img src="images/27.jpg" alt="página 27"></div>
+    <div><img src="images/28.jpg" alt="página 28"></div>
+    <div><img src="images/29.jpg" alt="página 29"></div>
+    <div><img src="images/30.jpg" alt="página 30"></div>
+    <div><img src="images/31.jpg" alt="página 31"></div>
+    <div><img src="images/32.jpg" alt="página 32"></div>
+    <div class="hard"><img src="images/33.jpg" alt="página 33"></div>
+    <div class="hard"><img src="images/34.jpg" alt="página 34"></div>
+  </div>
+
+  <div class="controls">
+    <div>
+      <button id="prev">⟵ Anterior</button>
+      <button id="next">Siguiente ⟶</button>
+    </div>
+    <div class="page-indicator" id="page-indicator">Página 1 de 34</div>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/turn.js"></script>
+  <script>
+    $(function () {
+      const $flipbook = $(".flipbook");
+      const $indicator = $("#page-indicator");
+
+      $flipbook.turn({
+        width: $flipbook.width(),
+        height: $flipbook.height(),
+        autoCenter: true,
+        when: {
+          turned: function (e, page) {
+            const total = $flipbook.turn("pages");
+            $indicator.text(`Página ${page} de ${total}`);
+          }
+        }
+      });
+
+      $("#prev").click(() => $flipbook.turn("previous"));
+      $("#next").click(() => $flipbook.turn("next"));
+
+      $(document).keydown(function (e) {
+        if (e.key === "ArrowLeft") $flipbook.turn("previous");
+        if (e.key === "ArrowRight") $flipbook.turn("next");
+      });
+
+      const totalPages = $flipbook.turn("pages");
+      $indicator.text(`Página 1 de ${totalPages}`);
+    });
+  </script>
+</body>
+
+</html>
